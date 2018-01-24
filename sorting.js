@@ -68,6 +68,48 @@ function selectionSort(arr) {
     return arr;
 }
 
+var arrLen;
+var count = 0;
+var swaps = 0;
+// creates MAX array  
+function heap_root(arr, i) {
+    var left = 2 * i + 1;
+    var right = 2 * i + 2;
+    var max = i;
+    if (left < arrLen && arr[left] > arr[max]) {
+        max = left;
+    }
+    if (right < arrLen && arr[right] > arr[max]) {
+        max = right;
+    }
+    if (max != i) {
+        swaps++;
+        swap(arr, i, max);
+        heap_root(arr, max);
+    }
+}
+
+function swap(arr, a, b) {
+    [arr[a], arr[b]] = [arr[b], arr[a]]
+}
+
+function heapSort(arr) {
+    arrLen = arr.length;
+    for (var i = Math.floor(arrLen / 2); i >= 0; i -= 1) {
+        count++;
+        heap_root(arr, i);
+    }
+    for (i = arr.length - 1; i > 0; i--) {
+        count++;
+        swaps++;
+        swap(arr, 0, i);
+        arrLen--;
+        heap_root(arr, 0);
+    }
+    console.log('Loop iterations: ' + count)
+    console.log("Swaps: " + swaps)
+}
+
 // Testing Zone
 array = [1, 2, 6, 5, 9, 0, -1, 3]
 arr = bubbleSort(array)
@@ -82,3 +124,8 @@ console.log(arr) // Should output [-3,-1,2,4,5,7,9,10]
 array = [1, 2, 6, 5, 9, 0, -1, 3]
 arr = bubbleSort1(array)
 console.log(arr) // Should output [-6,-3,0,1,5,8,10,11]
+
+// arr = [2, 0, 8, 5, -3, 4, -1, 1];
+arr = [1, 2, 6, 5, 9, 0, -1, 3]
+heapSort(arr)
+console.log(arr) // Should output [-3,-1,0,1,2,4,5,8]
