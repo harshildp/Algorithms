@@ -1,6 +1,7 @@
-// Sorting through an array of numbers using a selection sort algorithm
+// Sorting through an array of numbers using a selection sort algorithm.
+// This algorithm finds the minimum value at every iteration and swaps it toward the front.
 // This algorithm only takes N-1 swaps at the worst. With every pass -
-// through it puts at least one element in its final spot. Big O: O(n^2)
+// through it puts at least one element in its final spot. Big O: O(n^2). Omega(n^2)
 function selectionSort(arr) {
     for (let i = 0; i < arr.length - 1; i++) { // N-1 iterations will be needed at most
         let min = i; // start with i as the index for the minimum value

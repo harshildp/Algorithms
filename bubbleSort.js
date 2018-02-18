@@ -1,4 +1,7 @@
-// Sorting an array of numbers using a Bubble Sort algorithm
+// Sorting an array of numbers using a Bubble Sort algorithm.
+// This algorithm compares two elements and swaps if the greater one is before the lower one.
+// With every iteration the correctly placed greater numbers 'bubble' up to the right. 
+// Big O: O(n^2). Omega(n)
 function bubbleSort(arr) {
     n = arr.length; // how many elements you want to sort through in the next iteration
     while (n != 0) { // keep sorting until no swaps are made
