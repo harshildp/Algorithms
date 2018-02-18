@@ -19,7 +19,7 @@ function selectionSort(arr) {
 
 /* Testing */
 console.log(selectionSort([4,5,7,2,3,9]))
-console.log(selectionSort([9,8,7,6,5,4]))
+console.log(selectionSort([9,9,8,7,7,6,5,4]))
 console.log(selectionSort([5,4]))
 console.log(selectionSort([2]))
 console.log(selectionSort([]))

@@ -22,6 +22,7 @@ function bubbleSort(arr) {
 
 /* Testing */
 console.log(bubbleSort([9,2,3,5,4]))
+console.log(bubbleSort([9,2,3,2,3,5,4]))
+console.log(bubbleSort([9,2]))
 console.log(bubbleSort([9]))
 console.log(bubbleSort([]))
-console.log(bubbleSort([9,8,7,6,5]))

@@ -19,6 +19,7 @@ function insertionSort(arr) {
 
 /* Testing */
 console.log(insertionSort([3,6,8,2,9,1]))
+console.log(insertionSort([3,3,6,6,8,2,9,1]))
 console.log(insertionSort([6,5]))
 console.log(insertionSort([3]))
 console.log(insertionSort([]))
