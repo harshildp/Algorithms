@@ -33,6 +33,20 @@ SLL.prototype.add = function(value) {
     return node;
 }
 
+SLL.prototype.remove = function(val) {
+    let cur = this.head;
+    if (cur.value == val) {
+        this.head = cur.next;
+    } else {
+        while (cur.next != null && cur.next.value != val) {
+            cur = cur.next;
+        }
+        if (cur.next) {
+            cur.next = cur.next.next;
+        }
+    }
+}
+
 SLL.prototype.display = function() {
     let cur = this.head;
     while (cur) {
@@ -43,6 +57,7 @@ SLL.prototype.display = function() {
 
 let sll = new SLL();
 sll.add("one")
-sll.add("one")
-sll.add("one")
+sll.add("two")
+sll.add("three")
+sll.remove("one")
 sll.display();
