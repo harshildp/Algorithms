@@ -55,9 +55,21 @@ SLL.prototype.display = function() {
     }
 }
 
+SLL.prototype.search = function(val) {
+    var cur = this.head;
+    while (cur.next) {
+        if (cur.value == val) {
+            return cur;
+        }
+        cur = cur.next;
+    }   
+    return 'Not found';
+}
+
 let sll = new SLL();
 sll.add("one")
 sll.add("two")
 sll.add("three")
 sll.remove("one")
 sll.display();
+console.log(sll.search("one"))
